@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mini C Compiler</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1>🛠️ Mini C Compiler</h1>
+    <button id="themeToggle" onclick="toggleTheme()">🌗 Toggle Theme</button>
+  </header>
+
+  <main class="editor-container">
+  
+    <div id="editor"></div>
+    <!-- Bot Launcher -->
+    <button id="botToggle" onclick="toggleBot()">🤖 AI Assistant</button>
+
+    <!-- AI Bot Panel -->
+    <div id="botPanel">
+      <h3>🧠 AI Code Assistant</h3>
+      <textarea id="nlPrompt" placeholder="Describe your logic..."></textarea>
+      <div class="bot-actions">
+        <button onclick="startVoiceInput()">🎤 Speak</button>
+        <button onclick="generateCodeFromPrompt()">💡 Generate C Code</button>
+      </div>
+    </div>
+    <label for="userInput">Simulated Input for scanf:</label>
+    <input id="userInput" type="text" placeholder="Enter value (e.g., 5)" />
+
+    <section class="buttons">
+    <button onclick="showFullResult()">💡 Show Result</button>
+    </section>
+
+    <nav class="output-tabs">
+      <div class="output-tab active" onclick="showTab('lexerOutput')">Lexer</div>
+      <div class="output-tab" onclick="showTab('astOutput')">AST</div>
+      <div class="output-tab" onclick="showTab('irOutput')">IR</div>
+      <div class="output-tab" onclick="showTab('wasmOutput')">WASM</div>
+    </nav>
+
+    <section class="outputs">
+      <pre id="lexerOutput" class="output-panel active"></pre>
+      <pre id="astOutput" class="output-panel"></pre>
+      <pre id="irOutput" class="output-panel"></pre>
+      <pre id="wasmOutput" class="output-panel"></pre>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.1/min/vs/loader.min.js"></script>
+  <script src="clang-llvm-lld.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
