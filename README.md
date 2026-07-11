@@ -57,11 +57,11 @@ Installation
 
 Clone the repository
 
-git clone https://github.com/yourusername/Harshit_Compiler.git
+git clone https://github.com/yourusername/Compiler.git
 
 Move into the project
 
-cd Harshit_Compiler
+cd Compiler
 
 Compile
 
